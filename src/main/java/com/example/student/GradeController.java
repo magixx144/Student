@@ -1,35 +1,77 @@
 package com.example.student;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class GradeController {
-    @FXML
-    private Button CaculateText;
-    @FXML
-    private Label Text1;
-    @FXML
-    private Button GetaverageText;
-    @FXML
-    private Label Text2;
-    @FXML
-    private Label GetTrendsText;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
 
-
-
+public class GradeController extends Controller {
+    @FXML
+    private URL location;
+    @FXML
+    private TableView<Course> gradeTable;
+    @FXML
+    private TableColumn<Course, String> courseColumn;
+    @FXML
+    private TableColumn<Course, Double> gpaColumn;
+    @FXML
+    private TableColumn<Course, Integer> gradeColumn;
+    @FXML
+    private TableColumn<Course, Integer> numColumn;
+    @FXML
+    private TableColumn<Course, Integer> semesterColumn;
 
     @FXML
-    protected void onCaculateButtonClicked(){
-        Text1.setText("Your BUPT algorithm GPA is:3.33\n "+
-                "Your easy algorithm GPA is:4.44\n");
+    private Button gradeBackToHome;
+    @FXML
+    private Button gradeGoToGPA;
+    File file = new File("");
+    String path = file.getCanonicalPath();
+
+    public GradeController() throws IOException {
     }
-    @FXML
-    protected void onGetaverageTextClicked() {
-        Text2.setText("Year 1:100\n" +
-                "Year 2:90\n" +
-                "Year 3:80\n" +
-                "Year 4:123\n");
+    //相对路径，勿改动
+
+    public void init() {
+        try {
+            GradeReader reader = new GradeReader(path+"/Student/info/Grade.txt");
+
+            // Convert GradeReader to Course list
+            List<Course> courses = Course.fromGradeReader(reader);
+
+            // Create ObservableList from course list
+            ObservableList<Course> data = FXCollections.observableArrayList(courses);
+
+            // Set the data for the table
+            gradeTable.setItems(data);
+
+            // Set cell value factories for each column
+            courseColumn.setCellValueFactory(new PropertyValueFactory<>("courseName"));
+            gpaColumn.setCellValueFactory(new PropertyValueFactory<>("courseGPA"));
+            gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
+            numColumn.setCellValueFactory(new PropertyValueFactory<>("courseNumber"));
+            semesterColumn.setCellValueFactory(new PropertyValueFactory<>("semester"));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public void gradeBackToHomeOnAction(ActionEvent e) throws Exception {
+        PageController pageController=new PageController();
+        pageController.changePage(gradeBackToHome);
+    }
+    public void gradeGoToGPAOnAction(ActionEvent e) throws Exception {
+        PageController pageController=new PageController();
+        pageController.changePage(gradeGoToGPA);
     }
 }

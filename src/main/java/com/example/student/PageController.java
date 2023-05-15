@@ -16,7 +16,7 @@ import java.util.Objects;
  * @Date 2023 04 17 19 09
  **/
 public class PageController {
-    public void changePage(Button Btu) throws IOException {
+    public void changePage(Button Btu) throws Exception {
         Stage PrimaryStage = (Stage)Btu.getScene().getWindow();
         String Path = null;
         String title = null;
@@ -27,11 +27,25 @@ public class PageController {
         if(Btu.getId().equals("loginButton")){
             Path = "home.fxml";
             title = "Home";
+        }else if(Btu.getId().equals("courseBackToHome")){
+            Path = "home.fxml";
+            title = "Home";
+        }else if(Btu.getId().equals("gradeBackToHome")){
+            Path="home.fxml";
+            title = "Home";
+        } else if (Btu.getId().equals("gradeGoToGPA")) {
+            Path="GPA.fxml";
+            title = "GPA";
+        } else if (Btu.getId().equals("GPABackToGrade")) {
+            Path="Grade.fxml";
+            title = "Grade";
         }
 
         assert Path != null;
         FXMLLoader root = new FXMLLoader(Login.class.getResource(Path));
         Scene scene = new Scene(root.load(),640, 400);
+        Controller controller=root.getController();
+        controller.init();
 
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -42,7 +56,7 @@ public class PageController {
         PrimaryStage.close();
 
     }
-    public void changePage(ImageView imageView) throws IOException {
+    public void changePage(ImageView imageView) throws Exception {
         Stage PrimaryStage = (Stage)imageView.getScene().getWindow();
         String Path = null;
         String title=null;
@@ -54,13 +68,15 @@ public class PageController {
             Path = "course.fxml";
             title = "Course";
         } else if (imageView.getId().equals("homeGrade")) {
-            Path = "grade.fxml";
+            Path = "Grade.fxml";
             title = "Grade";
         }
 
         assert Path != null;
         FXMLLoader root = new FXMLLoader(Login.class.getResource(Path));
         Scene scene = new Scene(root.load(),640, 400);
+        Controller controller=root.getController();
+        controller.init();
 
         Stage stage = new Stage();
         stage.setResizable(false);

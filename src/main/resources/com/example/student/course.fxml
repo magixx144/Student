@@ -1,65 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+  This file is available and licensed under the following license:
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.CourseController">
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.CourseController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="590.0" layoutY="14.0">
-               <image>
-                  <Image url="@icon/person.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="549.0" layoutY="23.0" text="name" />
+            <Label layoutX="-2.0" layoutY="-1.0" prefHeight="59.0" prefWidth="648.0" style="-fx-background-color: ccccff;" text="                Course" textFill="#8c6868">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
             <CheckBox layoutX="445.0" layoutY="71.0" mnemonicParsing="false" opacity="0.0" prefHeight="18.0" prefWidth="52.0" text="all" />
             <CheckBox layoutX="507.0" layoutY="71.0" mnemonicParsing="false" opacity="0.0" prefHeight="18.0" prefWidth="83.0" text="Optional" />
             <CheckBox layoutX="507.0" layoutY="102.0" mnemonicParsing="false" opacity="0.0" prefHeight="18.0" prefWidth="103.0" text="Compulsory" />
-            <AnchorPane layoutX="7.0" layoutY="54.0" />
-            <Label layoutX="-2.0" layoutY="-4.0" prefHeight="60.0" prefWidth="648.0" style="-fx-background-color: cyan;" text="   Course" />
-            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="596.0" layoutY="14.0">
+            <AnchorPane layoutX="7.0" layoutY="54.0">
+               <children>
+                  <TabPane layoutY="7.0" prefHeight="337.0" prefWidth="634.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="ALL">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="286.0" prefWidth="596.0">
+                                 <children>
+                                    <Pane layoutX="79.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccffff;">
+                                       <children>
+                                          <TextArea fx:id="c1" layoutX="13.0" layoutY="61.0" mouseTransparent="true" prefHeight="77.0" prefWidth="95.0" text="Interactive&#10;Media &#10;Design" />
+                                          <ImageView fitHeight="68.0" fitWidth="121.0">
+                                             <image>
+                                                <Image url="@icon/团队-8.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children></Pane>
+                                    <Pane layoutX="265.0" layoutY="149.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccff66;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0" layoutX="1.0">
+                                             <image>
+                                                <Image url="@icon/团队-13.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea fx:id="c5" layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" text="Image&#10;and video&#10;Processing" />
+                                       </children></Pane>
+                                    <Pane layoutX="453.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffcccc;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0">
+                                             <image>
+                                                <Image url="@icon/团队-6.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea fx:id="c3" layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" text="Internet&#10;Protocol" />
+                                       </children></Pane>
+                                    <Pane layoutX="265.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0" layoutX="1.0">
+                                             <image>
+                                                <Image url="@icon/团队-10.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea fx:id="c2" layoutX="14.0" layoutY="61.0" prefHeight="76.0" prefWidth="95.0" text="Telecom-&#10;munication&#10;System" />
+                                       </children></Pane>
+                                    <Pane layoutX="453.0" layoutY="149.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccffcc;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0" layoutX="1.0">
+                                             <image>
+                                                <Image url="@icon/团队-2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea fx:id="c6" layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" text="Career&#10;Planning" />
+                                       </children></Pane>
+                                    <Pane layoutX="79.0" layoutY="149.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: cc99ff;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0" layoutX="1.0">
+                                             <image>
+                                                <Image url="@icon/团队-14.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea fx:id="c4" layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" text="Travel the &#10;world&#10;together" />
+                                       </children></Pane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Compulsory">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane layoutX="79.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccffff;">
+                                       <children>
+                                          <TextArea layoutX="13.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" style="-fx-background-color: ccffff;" text="Interactive&#10;Media &#10;Design" />
+                                          <ImageView fitHeight="68.0" fitWidth="121.0">
+                                             <image>
+                                                <Image url="@icon/团队-8.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="265.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0" layoutX="1.0">
+                                             <image>
+                                                <Image url="@icon/团队-10.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="14.0" layoutY="61.0" prefHeight="76.0" prefWidth="95.0" style="-fx-background-color: ccffff;" text="Telecom-&#10;munication&#10;System" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="453.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffcccc;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0">
+                                             <image>
+                                                <Image url="@icon/团队-6.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" style="-fx-background-color: ccffff;" text="Internet&#10;Protocol" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="79.0" layoutY="149.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccff66;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0" layoutX="1.0">
+                                             <image>
+                                                <Image url="@icon/团队-13.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" style="-fx-background-color: ccffff;" text="Image&#10;and video&#10;Processing" />
+                                       </children>
+                                    </Pane>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Optional">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane layoutX="79.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: cc99ff;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0" layoutX="1.0">
+                                             <image>
+                                                <Image url="@icon/团队-14.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" style="-fx-background-color: ccffff;" text="Travel the &#10;world&#10;together" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="265.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccffcc;">
+                                       <children>
+                                          <ImageView fitHeight="68.0" fitWidth="121.0" layoutX="1.0">
+                                             <image>
+                                                <Image url="@icon/团队-2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" style="-fx-background-color: ccffff;" text="Career&#10;Planning" />
+                                       </children>
+                                    </Pane>
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="592.0" layoutY="14.0">
                <image>
-                  <Image url="@icon/person.png" />
+                  <Image url="@icon/我的.png" />
                </image>
             </ImageView>
-            <Label layoutX="559.0" layoutY="25.0" text="name" />
-            <CheckBox fx:id="optional" layoutX="441.0" layoutY="67.0" mnemonicParsing="false" onAction="#optionalOnAction" opacity="0.46" prefHeight="26.0" prefWidth="93.0" text="Optional" />
-            <CheckBox fx:id="compulsory" layoutX="531.0" layoutY="67.0" mnemonicParsing="false" onAction="#compulsoryOnAction" opacity="0.46" prefHeight="26.0" prefWidth="103.0" text="Compulsory" />
-            <CheckBox fx:id="all" layoutX="375.0" layoutY="67.0" mnemonicParsing="false" onAction="#allOnAction" opacity="0.46" prefHeight="25.0" prefWidth="60.0" text="All" />
-            <Pane layoutX="78.0" layoutY="111.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
-               <children>
-                  <Label fx:id="courseLabel1" layoutX="35.0" layoutY="52.0" prefHeight="18.0" prefWidth="52.0" textAlignment="CENTER" />
-               </children>
-            </Pane>
-            <Pane layoutX="262.0" layoutY="111.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
-               <children>
-                  <Label fx:id="courseLabel2" layoutX="46.0" layoutY="54.0" />
-               </children>
-            </Pane>
-            <Pane layoutX="435.0" layoutY="111.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
-               <children>
-                  <Label fx:id="courseLabel3" layoutX="46.0" layoutY="54.0" />
-               </children>
-            </Pane>
-            <Pane layoutX="78.0" layoutY="263.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
-               <children>
-                  <Label fx:id="courseLabel4" layoutX="46.0" layoutY="54.0" />
-               </children>
-            </Pane>
-            <Pane layoutX="262.0" layoutY="263.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
-               <children>
-                  <Label fx:id="courseLabel5" layoutX="46.0" layoutY="54.0" />
-               </children>
-            </Pane>
-            <Pane layoutX="435.0" layoutY="263.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
-               <children>
-                  <Label fx:id="courseLabel6" layoutX="46.0" layoutY="54.0" />
-               </children>
-            </Pane>
+            <ImageView fitHeight="59.0" fitWidth="54.0" layoutX="7.0" layoutY="-1.0">
+               <image>
+                  <Image url="@icon/全部.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="171.0" layoutY="22.0" prefHeight="38.0" prefWidth="305.0" text="Academic Affairs Management System" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="courseBackToHome" layoutX="537.0" layoutY="17.0" mnemonicParsing="false" onAction="#courseBackToHomeOnAction" style="-fx-background-color: #FFC0CB;" text="Home" />
       </children>
     </AnchorPane>
+      <TextArea prefHeight="200.0" prefWidth="200.0" />
   </children>
 </VBox>

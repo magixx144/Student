@@ -14,13 +14,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
 
-public class LoginController {
+public class LoginController extends Controller {
     @FXML
     private Label warningLabel;
     @FXML
@@ -33,7 +31,17 @@ public class LoginController {
     private PasswordField passwordPasswordField;
     @FXML
     private ImageView test;
+    File file = new File("");
+    String path = file.getCanonicalPath();
 
+    public LoginController() throws IOException {
+    }
+    //相对路径，勿改动
+
+
+    public void init() {
+        System.out.println("Initial.");
+    }
 
     public void testOnMouseClicked(MouseEvent e){
         Stage stage = (Stage) test.getScene().getWindow();
@@ -55,13 +63,13 @@ public class LoginController {
 
     public void validateLogin() {
         PageController pageController=new PageController();
-        String paths="D:\\work\\SoftwareEngineering\\Student\\Student\\info\\stuinfo.txt";
+        String paths=path+"/Student/info/stuinfo.txt";
         try{
 
             List userinfo=User.readTxts(paths);
             Object[] o=userinfo.toArray();
             for(int i=0;i< userinfo.size();i++){
-                TxtObject user=(TxtObject) o[i];
+                LoginTxtObject user=(LoginTxtObject) o[i];
                 System.out.println(user);
                 if(user.getUsername().equals(usernameTextField.getText())
                 &&user.getPassword().equals(passwordPasswordField.getText())){
@@ -79,9 +87,9 @@ public class LoginController {
             System.out.println("io wrong");
         }
     }
-    public void writeFile(TxtObject stu) throws IOException {
+    public void writeFile(LoginTxtObject stu) throws IOException {
         try {
-            String filename="D:\\work\\SoftwareEngineering\\Student\\Student\\info\\temp.txt";
+            String filename=path+"/Student/info/temp.txt";
             FileOutputStream fout=new FileOutputStream(filename);
             OutputStreamWriter osw=new OutputStreamWriter(fout, "UTF-8");
             BufferedWriter  bw=new BufferedWriter(osw);

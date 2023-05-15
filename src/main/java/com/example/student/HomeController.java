@@ -6,18 +6,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @Author Magixx
  * @Date 2023 04 17 21 19
  **/
-public class HomeController {
+public class HomeController extends Controller {
     @FXML
     private Label homeFirstname;
     @FXML
@@ -36,22 +33,39 @@ public class HomeController {
     private Label homeExit;
     @FXML
     private ImageView profileImage;
+    public Grade c=new Grade();
+    public CourseTxtObj txt=new CourseTxtObj();
+    File file = new File("");
+    String path = file.getCanonicalPath();
+    //相对路径，勿改动
 
-    public static String paths="D:\\work\\SoftwareEngineering\\Student\\Student\\info\\temp.txt";
+    public String paths=path+"/Student/info/temp.txt";
+    public String pathsCourse=path+"/Student/info/courseinfo.txt";
+
+    public HomeController() throws IOException {
+    }
+
+    public void init(){
+        setHomeFirstname();
+        setHomeLastname();
+        setHomeUsername();
+    }
     public void homeExitOnMouseClicked(MouseEvent e){
         Stage stage = (Stage) homeExit.getScene().getWindow();
         stage.close();
     }
 
-    public void profileImageOnMouseMoved(MouseEvent e){
-        setHomeFirstname();
-        setHomeLastname();
-        setHomeUsername();
-    }
-    public TxtObject initialize()throws Exception{
+//    public void profileImageOnMouseMoved(MouseEvent e)throws Exception{
+//
+//        setHomeFirstname();
+//        setHomeLastname();
+//        setHomeUsername();
+//
+//    }
+    public LoginTxtObject initialize()throws Exception{
         List userinfo=User.readTxts(paths);
         Object[] o=userinfo.toArray();
-        TxtObject user=(TxtObject) o[0];
+        LoginTxtObject user=(LoginTxtObject) o[0];
         return user;
     }
 

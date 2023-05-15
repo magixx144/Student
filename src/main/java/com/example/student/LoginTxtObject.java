@@ -4,7 +4,7 @@ package com.example.student;
  * @Author Magixx
  * @Date 2023 04 17 16 00
  **/
-public class TxtObject {
+public class LoginTxtObject {
 
     private String firstname;
     private String lastname;
@@ -51,7 +51,7 @@ public class TxtObject {
         this.password = password;
 
     }
-    public TxtObject() {
+    public LoginTxtObject() {
 
         super();
 

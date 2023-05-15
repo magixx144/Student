@@ -22,7 +22,7 @@ public class User {
         int count = 0;
         List list = new ArrayList();
         while ((line = br.readLine()) != null) {
-            TxtObject txt = new TxtObject();
+            LoginTxtObject txt = new LoginTxtObject();
             String[] arr = line.split(",");
             if (arr.length > 3) {
                 txt.setFirstname(arr[0]);

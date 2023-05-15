@@ -11,9 +11,12 @@ import java.io.*;
 
 public class Login extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 570, 470);
+        Controller controller=fxmlLoader.getController();
+        controller.init();
+
 
         stage.setResizable(false);
         stage.setTitle("StudentManagement");

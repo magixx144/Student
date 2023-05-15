@@ -51,10 +51,10 @@
             <Glow />
          </effect>
          <children>
-            <Label fx:id="homeLastname" layoutX="31.0" layoutY="90.0" text="Last Name" />
-            <Label fx:id="homeFirstname" layoutX="30.0" layoutY="115.0" text="First Name" />
-            <Label fx:id="homeUsername" layoutX="29.0" layoutY="138.0" text="User Name" />
-            <ImageView fx:id="profileImage" fitHeight="67.0" fitWidth="69.0" layoutX="28.0" layoutY="14.0" onMouseMoved="#profileImageOnMouseMoved">
+            <Label fx:id="homeLastname" alignment="CENTER" layoutY="90.0" prefHeight="15.0" prefWidth="126.0" text="Place the mouse" textAlignment="CENTER" />
+            <Label fx:id="homeFirstname" alignment="CENTER" layoutX="18.0" layoutY="113.0" prefHeight="15.0" prefWidth="85.0" text="here to" />
+            <Label fx:id="homeUsername" alignment="CENTER" layoutX="-4.0" layoutY="138.0" prefHeight="15.0" prefWidth="135.0" text="display information" />
+            <ImageView fx:id="profileImage" fitHeight="67.0" fitWidth="69.0" layoutX="28.0" layoutY="14.0">
                <image>
                   <Image url="@icon/我的.png" />
                </image>

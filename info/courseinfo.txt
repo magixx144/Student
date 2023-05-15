@@ -1,0 +1,2 @@
+magixx,true,true,false,false,true,false
+poker,false,false,true,true,false,true

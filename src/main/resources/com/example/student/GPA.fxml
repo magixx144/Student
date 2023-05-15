@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.GPAController">
+
+    <children>
+      <Text layoutX="547.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GPA" wrappingWidth="98.19139671325684">
+         <font>
+            <Font name="Algerian" size="41.0" />
+         </font>
+      </Text>
+      <VBox layoutX="19.0" layoutY="176.0" prefHeight="91.0" prefWidth="521.0">
+         <children>
+            <Button fx:id="getAverageButton" mnemonicParsing="false" onAction="#onGetAverageButtonClicked" text="Check academic year average" />
+            <Label fx:id="text2" prefHeight="86.0" prefWidth="521.0" style="-fx-background-color: ffffcc;" />
+         </children></VBox>
+      <Pane layoutX="6.0" layoutY="267.0" prefHeight="132.0" prefWidth="548.0">
+         <children>
+            <Button fx:id="getTrendGradesButton" layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#onTrendGradesButtonClicked" text="GetTrend" />
+            <VBox layoutX="14.0" layoutY="32.0" prefHeight="68.0" prefWidth="521.0" style="-fx-background-color: ffffcc;" />
+         </children>
+      </Pane>
+      <Label layoutY="-3.0" prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: ccccff;" text="             GPA" textFill="#8c6868">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="GPABackToGrade" layoutX="497.0" layoutY="17.0" mnemonicParsing="false" onAction="#GPABackToGradeOnAction" text="back" />
+
+            <Button fx:id="calculateButton" layoutX="19.0" layoutY="75.0" mnemonicParsing="false" onAction="#onCalculateButtonClicked" text="Calculate your GPA" />
+      <Button layoutX="107.0" layoutY="15.0" mnemonicParsing="false" text="Home" textFill="#662e2e">
+         <font>
+            <Font name="Arial Unicode MS" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="554.0" layoutY="20.0" text="name" />
+      <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="6.0" layoutY="5.0">
+         <image>
+            <Image url="@icon/绩效.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="text1" layoutX="20.0" layoutY="98.0" prefHeight="71.0" prefWidth="521.0" style="-fx-background-color: ffffcc;" />
+   </children>
+</Pane>
