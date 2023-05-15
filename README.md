@@ -1,4 +1,4 @@
-# Study-Journey-App
+# Study_Journey_App
 # EBU6304
 ## Group Number: 2022EBU6304G36
 ## Project Title: Study-Journey-App
