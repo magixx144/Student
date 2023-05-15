@@ -45,11 +45,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.CourseController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.CourseController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
-            <Label layoutX="-2.0" layoutY="-1.0" prefHeight="59.0" prefWidth="648.0" style="-fx-background-color: ccccff;" text="                Course" textFill="#8c6868">
+            <Label layoutX="-2.0" layoutY="-1.0" prefHeight="59.0" prefWidth="647.0" style="-fx-background-color: ccccff;" text="                Course" textFill="#8c6868">
                <font>
                   <Font size="15.0" />
                </font></Label>
@@ -66,12 +66,15 @@
                                  <children>
                                     <Pane layoutX="79.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccffff;">
                                        <children>
-                                          <TextArea fx:id="c1" layoutX="13.0" layoutY="61.0" mouseTransparent="true" prefHeight="77.0" prefWidth="95.0" text="Interactive&#10;Media &#10;Design" />
                                           <ImageView fitHeight="68.0" fitWidth="121.0">
                                              <image>
                                                 <Image url="@icon/团队-8.png" />
                                              </image>
                                           </ImageView>
+                                          <TextArea fx:id="c1" layoutX="13.0" layoutY="69.0" mouseTransparent="true" prefHeight="51.0" prefWidth="95.0" text="Interactive&#10;Media &#10;Design">
+                                             <font>
+                                                <Font name="Cooper Black" size="12.0" />
+                                             </font></TextArea>
                                        </children></Pane>
                                     <Pane layoutX="265.0" layoutY="149.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccff66;">
                                        <children>
@@ -80,7 +83,10 @@
                                                 <Image url="@icon/团队-13.png" />
                                              </image>
                                           </ImageView>
-                                          <TextArea fx:id="c5" layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" text="Image&#10;and video&#10;Processing" />
+                                          <TextArea fx:id="c5" layoutX="14.0" layoutY="68.0" prefHeight="52.0" prefWidth="95.0" text="Image&#10;and video&#10;Processing">
+                                             <font>
+                                                <Font name="Cooper Black" size="12.0" />
+                                             </font></TextArea>
                                        </children></Pane>
                                     <Pane layoutX="453.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffcccc;">
                                        <children>
@@ -89,7 +95,10 @@
                                                 <Image url="@icon/团队-6.png" />
                                              </image>
                                           </ImageView>
-                                          <TextArea fx:id="c3" layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" text="Internet&#10;Protocol" />
+                                          <TextArea fx:id="c3" layoutX="14.0" layoutY="69.0" prefHeight="51.0" prefWidth="95.0" text="Internet&#10;Protocol">
+                                             <font>
+                                                <Font name="Cooper Black" size="12.0" />
+                                             </font></TextArea>
                                        </children></Pane>
                                     <Pane layoutX="265.0" layoutY="12.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ffffcc;">
                                        <children>
@@ -98,7 +107,10 @@
                                                 <Image url="@icon/团队-10.png" />
                                              </image>
                                           </ImageView>
-                                          <TextArea fx:id="c2" layoutX="14.0" layoutY="61.0" prefHeight="76.0" prefWidth="95.0" text="Telecom-&#10;munication&#10;System" />
+                                          <TextArea fx:id="c2" layoutX="14.0" layoutY="70.0" prefHeight="50.0" prefWidth="95.0" text="Telecom-&#10;munication&#10;System">
+                                             <font>
+                                                <Font name="Cooper Black" size="12.0" />
+                                             </font></TextArea>
                                        </children></Pane>
                                     <Pane layoutX="453.0" layoutY="149.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: ccffcc;">
                                        <children>
@@ -107,7 +119,10 @@
                                                 <Image url="@icon/团队-2.png" />
                                              </image>
                                           </ImageView>
-                                          <TextArea fx:id="c6" layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" text="Career&#10;Planning" />
+                                          <TextArea fx:id="c6" layoutX="14.0" layoutY="67.0" prefHeight="53.0" prefWidth="95.0" text="Career&#10;Planning">
+                                             <font>
+                                                <Font name="Cooper Black" size="12.0" />
+                                             </font></TextArea>
                                        </children></Pane>
                                     <Pane layoutX="79.0" layoutY="149.0" prefHeight="122.0" prefWidth="122.0" style="-fx-background-color: cc99ff;">
                                        <children>
@@ -116,7 +131,10 @@
                                                 <Image url="@icon/团队-14.png" />
                                              </image>
                                           </ImageView>
-                                          <TextArea fx:id="c4" layoutX="14.0" layoutY="61.0" prefHeight="77.0" prefWidth="95.0" text="Travel the &#10;world&#10;together" />
+                                          <TextArea fx:id="c4" layoutX="14.0" layoutY="68.0" prefHeight="52.0" prefWidth="95.0" text="Travel the &#10;world&#10;together">
+                                             <font>
+                                                <Font name="Cooper Black" size="12.0" />
+                                             </font></TextArea>
                                        </children></Pane>
                                  </children>
                               </AnchorPane>
@@ -218,6 +236,5 @@
             <Button fx:id="courseBackToHome" layoutX="537.0" layoutY="17.0" mnemonicParsing="false" onAction="#courseBackToHomeOnAction" style="-fx-background-color: #FFC0CB;" text="Home" />
       </children>
     </AnchorPane>
-      <TextArea prefHeight="200.0" prefWidth="200.0" />
   </children>
 </VBox>

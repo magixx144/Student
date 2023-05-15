@@ -19,12 +19,12 @@
                </image>
             </ImageView>
             <Label layoutX="193.0" layoutY="97.0" text="Grade" />
-            <ImageView fx:id="homeMail" fitHeight="60.0" fitWidth="60.0" layoutX="307.0" layoutY="26.0">
+            <ImageView fx:id="homeContribution" fitHeight="60.0" fitWidth="60.0" layoutX="307.0" layoutY="26.0" onMouseClicked="#HomeContributionOnMouseClicked">
                <image>
                   <Image url="@icon/信息.png" />
                </image>
             </ImageView>
-            <Label layoutX="325.0" layoutY="97.0" text="Mail" />
+            <Label layoutX="300.0" layoutY="97.0" text="Contribution" />
             <ImageView fx:id="homeRecharge" fitHeight="60.0" fitWidth="60.0" layoutX="434.0" layoutY="26.0">
                <image>
                   <Image url="@icon/充值.png" />

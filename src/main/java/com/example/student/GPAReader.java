@@ -67,7 +67,7 @@ public class GPAReader {
             String[] fields = line.split(";");
             if(fields[0].equals(username)){
                 String[] gradeInfo=fields[1].split("/");
-                for(int i=0;i<16;i++){
+                for(int i=0;i<gradeInfo.length;i++){
                     int courseNumber = Integer.parseInt(gradeInfo[i].split(",")[0]);
                     String course=gradeInfo[i].split(",")[1];
                     int semester = Integer.parseInt(gradeInfo[i].split(",")[2]);

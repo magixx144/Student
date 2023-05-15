@@ -26,7 +26,7 @@ public class HomeController extends Controller {
     @FXML
     private ImageView homeGrade;
     @FXML
-    private ImageView homeMail;
+    private ImageView homeContribution;
     @FXML
     private ImageView homeRecharge;
     @FXML
@@ -99,6 +99,10 @@ public class HomeController extends Controller {
     public void homeGradeOnMouseClicked(MouseEvent e) throws Exception{
         PageController pageController=new PageController();
         pageController.changePage(homeGrade);
+    }
+    public void HomeContributionOnMouseClicked(MouseEvent e) throws Exception {
+        PageController pageController=new PageController();
+        pageController.changePage(homeContribution);
     }
 
 }
