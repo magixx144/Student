@@ -39,6 +39,9 @@ public class PageController {
         } else if (Btu.getId().equals("GPABackToGrade")) {
             Path="Grade.fxml";
             title = "Grade";
+        } else if (Btu.getId().equals("GPABackToHome")) {
+            Path="home.fxml";
+            title = "Home";
         }
 
         assert Path != null;

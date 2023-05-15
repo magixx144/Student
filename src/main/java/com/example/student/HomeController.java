@@ -33,7 +33,7 @@ public class HomeController extends Controller {
     private Label homeExit;
     @FXML
     private ImageView profileImage;
-    public Grade c=new Grade();
+    public Course c=new Course();
     public CourseTxtObj txt=new CourseTxtObj();
     File file = new File("");
     String path = file.getCanonicalPath();

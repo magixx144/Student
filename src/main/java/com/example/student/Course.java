@@ -1,104 +1,40 @@
 package com.example.student;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
+
 
 public class Course {
-    private int courseNumber;
-    private String courseName;
-    private int semester;
-    private int grade;
-    private double credit;
-    private double CourseGPA;
+    public static CourseTxtObj readCourse(String paths) throws Exception {  //把文件读成beans
+        InputStreamReader isr = new InputStreamReader(new FileInputStream(paths), "UTF-8");
+        BufferedReader br = new BufferedReader(isr);
+        String line = null;
+        int count = 0;
+        CourseTxtObj course = new CourseTxtObj();
+        HomeController user=new HomeController();
+        LoginTxtObject curUser=user.initialize();
 
-    public Course(int courseNumber, String courseName, int semester, int grade, double credit, double CourseGPA) {
-        this.courseNumber = courseNumber;
-        this.courseName = courseName;
-        this.semester = semester;
-        this.grade = grade;
-        this.credit = credit;
-        this.CourseGPA = CourseGPA;
-    }
+        while ((line = br.readLine()) != null) {
 
-    public int getCourseNumber() {
-        return courseNumber;
-    }
+            String[] arr = line.split(",");
 
-    public void setCourseNumber(int courseNumber) {
-        this.courseNumber = courseNumber;
-    }
+            if(curUser.getUsername().equals(arr[0])&&arr.length>6){
+                course.setUsername(arr[0]);
+                course.setInteractiveMediaDesign(arr[1]);
+                course.setTelecommunicationSystem(arr[2]);
+                course.setInternetProtocol(arr[3]);
+                course.setTravelTheWorldTogether(arr[4]);
+                course.setImageAndVideoProcessing(arr[5]);
+                course.setCareerPlaning(arr[6]);
+                break;
+            }
+            count++;
 
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
-    public int getSemester() {
-        return semester;
-    }
-
-    public void setSemester(int semester) {
-        this.semester = semester;
-    }
-
-    public int getGrade() {
-        return grade;
-    }
-
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
-
-    public double getCredit() {
-        return credit;
-    }
-
-    public void setCredit(double credit) {
-        this.credit = credit;
-    }
-
-    public double getCourseGPA() {
-        return CourseGPA;
-    }
-
-    public void setCourseGPA(double CourseGPA) {
-        this.CourseGPA = CourseGPA;
-    }
-
-    @Override
-    public String toString() {
-        return "Course{" +
-                "courseNumber=" + courseNumber +
-                ", courseName='" + courseName + '\'' +
-                ", semester=" + semester +
-                ", grade=" + grade +
-                ", credit=" + credit +
-                ", courseGPA=" + CourseGPA +
-                '}';
-    }
-
-    public static List<Course> fromGradeReader(GradeReader reader) {
-        List<Integer> courseNumberList = reader.getCourseNumberList();
-        List<String> courseList = reader.getCourseList();
-        List<Integer> semesterList = reader.getSemesterList();
-        List<Integer> gradeList = reader.getGradeList();
-        List<Double> creditList = reader.getCreditList();
-        List<Double> CourseGPAList = reader.getCourseGPAList();
-
-        List<Course> courseListOut = new ArrayList<>();
-        for (int i = 0; i < courseNumberList.size(); i++) {
-            int courseNumber = courseNumberList.get(i);
-            String courseName = courseList.get(i);
-            int semester = semesterList.get(i);
-            int grade = gradeList.get(i);
-            double credit = creditList.get(i);
-            double CourseGPA = CourseGPAList.get(i);
-            Course course = new Course(courseNumber, courseName, semester, grade, credit, CourseGPA);
-            courseListOut.add(course);
         }
-        return courseListOut;
+
+
+        return course;
     }
 }

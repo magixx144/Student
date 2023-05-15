@@ -19,17 +19,17 @@ public class GradeController extends Controller {
     @FXML
     private URL location;
     @FXML
-    private TableView<Course> gradeTable;
+    private TableView<Grade> gradeTable;
     @FXML
-    private TableColumn<Course, String> courseColumn;
+    private TableColumn<Grade, String> courseColumn;
     @FXML
-    private TableColumn<Course, Double> gpaColumn;
+    private TableColumn<Grade, Double> gpaColumn;
     @FXML
-    private TableColumn<Course, Integer> gradeColumn;
+    private TableColumn<Grade, Integer> gradeColumn;
     @FXML
-    private TableColumn<Course, Integer> numColumn;
+    private TableColumn<Grade, Integer> numColumn;
     @FXML
-    private TableColumn<Course, Integer> semesterColumn;
+    private TableColumn<Grade, Integer> semesterColumn;
 
     @FXML
     private Button gradeBackToHome;
@@ -44,13 +44,14 @@ public class GradeController extends Controller {
 
     public void init() {
         try {
-            GradeReader reader = new GradeReader(path+"/Student/info/Grade.txt");
+            //GradeReader reader = new GradeReader(path+"/Student/info/Grade.txt");
+            GPAReader reader = new GPAReader(path+"/Student/info/GPA.txt");
 
             // Convert GradeReader to Course list
-            List<Course> courses = Course.fromGradeReader(reader);
+            List<Grade> course = Grade.fromGradeReader(reader);
 
             // Create ObservableList from course list
-            ObservableList<Course> data = FXCollections.observableArrayList(courses);
+            ObservableList<Grade> data = FXCollections.observableArrayList(course);
 
             // Set the data for the table
             gradeTable.setItems(data);
@@ -64,6 +65,8 @@ public class GradeController extends Controller {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
     public void gradeBackToHomeOnAction(ActionEvent e) throws Exception {

@@ -3,8 +3,6 @@ package com.example.student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +30,7 @@ public class CourseController extends Controller {
     private CheckBox compulsory;
     @FXML
     private Button courseBackToHome;
-    public Grade grade=new Grade();
+    public Course grade=new Course();
     File file = new File("");
     String path = file.getCanonicalPath();
     //相对路径，勿改动

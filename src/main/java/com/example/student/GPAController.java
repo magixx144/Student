@@ -12,13 +12,12 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
 
 public class GPAController extends Controller {
-    private final GradeReader gradeReader;
+    private final GPAReader gradeReader;
 
     @FXML
     private Button calculateButton;
@@ -34,6 +33,8 @@ public class GPAController extends Controller {
 
     @FXML
     private Label text2;
+    @FXML
+    private Label name;
 
     @FXML
     private NumberAxis Grades;
@@ -42,6 +43,8 @@ public class GPAController extends Controller {
     private CategoryAxis SemesterYear;
     @FXML
     private Button GPABackToGrade;
+    @FXML
+    private Button GPABackToHome;
     File file = new File("");
     String path = file.getCanonicalPath();
     //相对路径，勿改动
@@ -50,17 +53,21 @@ public class GPAController extends Controller {
 
     public GPAController() throws IOException {
         // 指定读取文件的路径
-        String filePath = path+"/Student/info/Grade.txt";
-        this.gradeReader = new GradeReader(filePath);
+        String filePath = path+"/Student/info/GPA.txt";
+        this.gradeReader = new GPAReader(filePath);
     }
 
     @Override
     public void init() {
-
+        name.setText(gradeReader.getUsername()+"\nWelcome!");
     }
     public void GPABackToGradeOnAction(ActionEvent e) throws Exception {
         PageController pageController=new PageController();
         pageController.changePage(GPABackToGrade);
+    }
+    public void GPABackToHomeOnAction(ActionEvent e) throws Exception {
+        PageController pageController=new PageController();
+        pageController.changePage(GPABackToHome);
     }
 
     @FXML
