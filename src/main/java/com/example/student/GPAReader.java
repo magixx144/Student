@@ -78,23 +78,24 @@ public class GPAReader {
                     semesterList.add(semester);
                     gradeList.add(grade);
                     creditList.add(credit);
-                    for (int j = 0; j < courseNumberList.size(); j++) {
-                        courseGPACalculate(i);
-                    }
                 }
+                for (int j = 0; j < courseNumberList.size(); j++) {
+                    CourseGPAList.add(courseGPACalculate(j));
+                }
+                scanner.close();
                 break;
             }
         }
     }
     public double courseGPACalculate(int index) {
         int grade = gradeList.get(index);
+        double gpa;
         if (grade >= 60) {
-            double gpa = 4 - 3 * Math.pow(100 - grade, 2) / 1600;
-            CourseGPAList.add(gpa);
-            return gpa;
+            gpa = 4 - 3 * Math.pow(100 - grade, 2) / 1600;
         } else {
-            return 0;
+            gpa = 0;
         }
+        return gpa;
     }
     public ArrayList<Double>getCourseGPAList(){
 

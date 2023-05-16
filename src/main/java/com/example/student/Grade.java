@@ -18,6 +18,7 @@ public class Grade {
         this.grade = grade;
         this.credit = credit;
         this.CourseGPA = CourseGPA;
+
     }
 
     public int getCourseNumber() {
@@ -68,6 +69,7 @@ public class Grade {
         this.CourseGPA = CourseGPA;
     }
 
+
     @Override
     public String toString() {
         return "Course{" +
@@ -87,7 +89,6 @@ public class Grade {
         List<Integer> gradeList = reader.getGradeList();
         List<Double> creditList = reader.getCreditList();
         List<Double> CourseGPAList = reader.getCourseGPAList();
-
         List<Grade> gradeListOut = new ArrayList<>();
         for (int i = 0; i < courseNumberList.size(); i++) {
             int courseNumber = courseNumberList.get(i);

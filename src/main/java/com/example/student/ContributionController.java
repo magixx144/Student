@@ -57,23 +57,27 @@ public class ContributionController extends Controller {
         init();
     }
 
-    @Override
+
     public void init() throws Exception {
         numColumn.setCellValueFactory(cellData -> cellData.getValue().contributionNumberProperty().asObject());
         contributionColumn.setCellValueFactory(cellData -> cellData.getValue().contributionProperty());
         semesterColumn.setCellValueFactory(cellData -> cellData.getValue().semesterProperty().asObject());
         detailColumn.setCellValueFactory(cellData -> cellData.getValue().detailProperty());
 
-        checkButton.setOnAction(event -> {
-            try {
-                contributionReader = new ContributionReader(path+"/Student/info/Contribution.txt");
-                ArrayList<Contribution> contributions = Contribution.fromContributionReader(contributionReader);
-                ObservableList<Contribution> contributionData = FXCollections.observableArrayList(contributions);
-                contributionTable.setItems(contributionData);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
+//        checkButton.setOnAction(event -> {
+//            try {
+//                contributionReader = new ContributionReader(path+"/Student/info/Contribution.txt");
+//                ArrayList<Contribution> contributions = Contribution.fromContributionReader(contributionReader);
+//                ObservableList<Contribution> contributionData = FXCollections.observableArrayList(contributions);
+//                contributionTable.setItems(contributionData);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        });
+        contributionReader = new ContributionReader(path+"/Student/info/Contribution.txt");
+        ArrayList<Contribution> contributions = Contribution.fromContributionReader(contributionReader);
+        ObservableList<Contribution> contributionData = FXCollections.observableArrayList(contributions);
+        contributionTable.setItems(contributionData);
     }
+
 }

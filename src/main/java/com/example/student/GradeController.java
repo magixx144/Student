@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,6 +17,8 @@ import java.net.URL;
 import java.util.List;
 
 public class GradeController extends Controller {
+    @FXML
+    private Label name;
     @FXML
     private URL location;
     @FXML
@@ -46,7 +49,7 @@ public class GradeController extends Controller {
         try {
             //GradeReader reader = new GradeReader(path+"/Student/info/Grade.txt");
             GPAReader reader = new GPAReader(path+"/Student/info/GPA.txt");
-
+            name.setText(reader.getUsername()+"\nWelcome!!!");
             // Convert GradeReader to Course list
             List<Grade> course = Grade.fromGradeReader(reader);
 
@@ -58,7 +61,7 @@ public class GradeController extends Controller {
 
             // Set cell value factories for each column
             courseColumn.setCellValueFactory(new PropertyValueFactory<>("courseName"));
-            gpaColumn.setCellValueFactory(new PropertyValueFactory<>("courseGPA"));
+            gpaColumn.setCellValueFactory(new PropertyValueFactory<>("CourseGPA"));
             gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
             numColumn.setCellValueFactory(new PropertyValueFactory<>("courseNumber"));
             semesterColumn.setCellValueFactory(new PropertyValueFactory<>("semester"));
@@ -66,6 +69,8 @@ public class GradeController extends Controller {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -77,4 +82,5 @@ public class GradeController extends Controller {
         PageController pageController=new PageController();
         pageController.changePage(gradeGoToGPA);
     }
+
 }
