@@ -30,6 +30,8 @@ public class CourseController extends Controller {
     private CheckBox compulsory;
     @FXML
     private Button courseBackToHome;
+    @FXML
+    private Label name;
     public Course grade=new Course();
     File file = new File("");
     String path = file.getCanonicalPath();
@@ -41,6 +43,8 @@ public class CourseController extends Controller {
 
 
     public void init() throws Exception {
+        GPAReader reader = new GPAReader(path+"/Student/info/GPA.txt");
+        name.setText(reader.getUsername()+"\nWelcome!!!");
         CourseTxtObj course=grade.readCourse(filePath);
         if(course.getInteractiveMediaDesign().equals("true")){
             c1.setText("Interactive\n" +

@@ -31,6 +31,7 @@ public class HomeController extends Controller {
     private ImageView homeRecharge;
     @FXML
     private Label homeExit;
+
     @FXML
     private ImageView profileImage;
     public Course c=new Course();

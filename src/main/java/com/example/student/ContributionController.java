@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -41,6 +42,8 @@ public class ContributionController extends Controller {
     private Button checkButton;
     @FXML
     private Button contributionBackToHome;
+    @FXML
+    private Label name;
 
     private ContributionReader contributionReader;
     File file = new File("");
@@ -64,6 +67,8 @@ public class ContributionController extends Controller {
 
 
     public void init() throws Exception {
+        GPAReader reader = new GPAReader(path+"/Student/info/GPA.txt");
+        name.setText(reader.getUsername()+"\nWelcome!!!");
         numColumn.setCellValueFactory(cellData -> cellData.getValue().contributionNumberProperty().asObject());
         contributionColumn.setCellValueFactory(cellData -> cellData.getValue().contributionProperty());
         semesterColumn.setCellValueFactory(cellData -> cellData.getValue().semesterProperty().asObject());
