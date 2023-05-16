@@ -10,6 +10,11 @@ import java.util.Scanner;
  * @Author Magixx
  * @Date 2023 05 15 19 45
  **/
+/*
+Copyright (C) [2023] [Kehao Lyu]
+This code is owned and solely developed by [Kehao Lyu]. Any unauthorized copying, usage, modification, or distribution of this software is strictly prohibited without the written permission of [Kehao Lyu].
+@Kuangxiaokao
+*/
 public class GPAReader {
     private String username;
     private ArrayList<Integer> courseNumberList;

@@ -16,7 +16,11 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
-
+/*
+Copyright (C) [2023] [Kehao Lyu]
+This code is owned and solely developed by [Kehao Lyu]. Any unauthorized copying, usage, modification, or distribution of this software is strictly prohibited without the written permission of [Kehao Lyu].
+@Kuangxiaokao
+*/
 
 public class GPAController extends Controller {
     private final GPAReader gradeReader;

@@ -3,7 +3,10 @@ package com.example.student;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-
+/**
+ * @Author Magixx
+ * @Date 2023 04 17 18 12
+ **/
 
 
 public class Course {
