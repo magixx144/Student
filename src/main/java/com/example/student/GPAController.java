@@ -9,6 +9,8 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -44,6 +46,8 @@ public class GPAController extends Controller {
     @FXML
     private Button GPABackToGrade;
     @FXML
+    private ImageView GPABackToHomeNew;
+    @FXML
     private Button GPABackToHome;
     File file = new File("");
     String path = file.getCanonicalPath();
@@ -68,6 +72,10 @@ public class GPAController extends Controller {
     public void GPABackToHomeOnAction(ActionEvent e) throws Exception {
         PageController pageController=new PageController();
         pageController.changePage(GPABackToHome);
+    }
+    public void GPABackToHomeNewOnAction(MouseEvent e) throws Exception {
+        PageController pageController=new PageController();
+        pageController.changePage(GPABackToHomeNew);
     }
 
     @FXML

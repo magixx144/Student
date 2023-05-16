@@ -47,7 +47,7 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.CourseController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="637.0" VBox.vgrow="ALWAYS">
       <children>
             <Label layoutX="-2.0" layoutY="-1.0" prefHeight="59.0" prefWidth="647.0" style="-fx-background-color: ccccff;" text="                Course" textFill="#8c6868">
                <font>
@@ -233,7 +233,12 @@
                   <Font name="Arial Bold" size="16.0" />
                </font>
             </Label>
-            <Button fx:id="courseBackToHome" layoutX="537.0" layoutY="17.0" mnemonicParsing="false" onAction="#courseBackToHomeOnAction" style="-fx-background-color: #FFC0CB;" text="Home" />
+            <Button fx:id="courseBackToHome" layoutX="485.0" layoutY="19.0" mnemonicParsing="false" onAction="#courseBackToHomeOnAction" style="-fx-background-color: ffcccc;" text="Home" />
+            <Label fx:id="name" layoutX="540.0" layoutY="20.0" text="name">
+               <font>
+                  <Font name="Algerian" size="12.0" />
+               </font>
+            </Label>
       </children>
     </AnchorPane>
   </children>

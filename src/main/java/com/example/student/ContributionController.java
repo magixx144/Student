@@ -29,6 +29,8 @@ public class ContributionController extends Controller {
 
     @FXML
     private TableColumn<Contribution, String> detailColumn;
+    @FXML
+    private Button conGoToGrade;
 
     @FXML
     private Button checkButton;
@@ -44,6 +46,10 @@ public class ContributionController extends Controller {
     public void ContributionBackToHomeOnAction(ActionEvent e) throws Exception {
         PageController pageController=new PageController();
         pageController.changePage(contributionBackToHome);
+    }
+    public void ContributionBackToGradeOnAction(ActionEvent e) throws Exception {
+        PageController pageController=new PageController();
+        pageController.changePage(conGoToGrade);
     }
 
     @FXML

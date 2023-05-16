@@ -45,6 +45,9 @@ public class PageController {
         } else if (Btu.getId().equals("contributionBackToHome")) {
             Path="home.fxml";
             title = "Home";
+        } else if (Btu.getId().equals("conGoToGrade")) {
+            Path="Grade.fxml";
+            title = "Grade";
         }
 
         assert Path != null;
@@ -79,6 +82,9 @@ public class PageController {
         } else if (imageView.getId().equals("homeContribution")) {
             Path = "Contribution.fxml";
             title = "Contribution";
+        } else if (imageView.getId().equals("GPABackToHomeNew")) {
+            Path = "home.fxml";
+            title = "home";
         }
 
         assert Path != null;

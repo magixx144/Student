@@ -36,30 +36,63 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.ContributionController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.ContributionController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="408.0" prefWidth="564.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="checkButton" layoutX="46.0" layoutY="109.0" minWidth="52.0" mnemonicParsing="false" onAction="#checkButtonOnAction" prefHeight="29.0" prefWidth="52.0" text="Check" />
-            <TableView fx:id="contributionTable" layoutX="46.0" layoutY="150.0" prefHeight="198.0" prefWidth="502.0">
+            <Label prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: ccccff;" text="          Extras" textFill="#8c6868">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="checkButton" layoutX="459.0" layoutY="70.0" minWidth="52.0" mnemonicParsing="false" onAction="#checkButtonOnAction" prefHeight="29.0" prefWidth="65.0" text="DETAILS" />
+            <TableView fx:id="contributionTable" layoutX="46.0" layoutY="105.0" prefHeight="235.0" prefWidth="553.0" style="-fx-background-color: ccffff;">
               <columns>
                 <TableColumn fx:id="numColumn" prefWidth="75.0" text="No." />
                 <TableColumn fx:id="contributionColumn" prefWidth="150.0" text="Contributon" />
                   <TableColumn fx:id="semesterColumn" minWidth="0.0" prefWidth="77.5999755859375" text="Semester" />
-                  <TableColumn fx:id="detailColumn" minWidth="0.0" prefWidth="205.5999755859375" text="Details" />
+                  <TableColumn fx:id="detailColumn" minWidth="0.0" prefWidth="249.0" text="Details" />
               </columns>
             </TableView>
-            <Label layoutX="46.0" layoutY="20.0" prefHeight="49.0" prefWidth="301.0" text="Extra Contributions">
+            <Button fx:id="contributionBackToHome" layoutX="485.0" layoutY="19.0" mnemonicParsing="false" onAction="#ContributionBackToHomeOnAction" style="-fx-background-color: ffcccc;" text="Home" />
+            <Label fx:id="name" layoutX="540.0" layoutY="20.0" text="name">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Algerian" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="46.0" layoutY="70.0" prefHeight="29.0" prefWidth="484.0" text="Check your extra contributions(e.g. course representative, volunteer)" />
-            <Button fx:id="contributionBackToHome" layoutX="493.0" layoutY="33.0" mnemonicParsing="false" onAction="#ContributionBackToHomeOnAction" text="Home" />
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="6.0" layoutY="8.0">
+               <image>
+                  <Image url="@../../../../../../../icon/绩效.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="46.0" layoutY="70.0" prefHeight="29.0" prefWidth="405.0" text=" Here's your extra contributions(e.g. course representative, volunteer)" />
+            <Label layoutX="168.0" layoutY="24.0" prefHeight="38.0" prefWidth="305.0" text="Academic Affairs Management System" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="48.0" fitWidth="49.0" layoutY="5.0">
+               <image>
+                  <Image url="@icon/预置技能.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="592.0" layoutY="14.0">
+               <image>
+                  <Image url="@icon/我的.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="474.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Extras" wrappingWidth="165.19139671325684">
+               <font>
+                  <Font name="Algerian" size="41.0" />
+               </font>
+            </Text>
       </children>
     </AnchorPane>
   </children>
