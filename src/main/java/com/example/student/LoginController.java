@@ -1,5 +1,9 @@
 package com.example.student;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 /**
  * @Author Magixx
  * @Date 2023 04 17 21 19
@@ -32,6 +36,29 @@ public class LoginController extends Controller {
     private PasswordField passwordPasswordField;
     @FXML
     private ImageView test;
+    @FXML
+    private Button loginChangeButton;
+    @FXML
+    private Button signUpButton;
+    @FXML
+    private Button adminButton;
+
+    public void adminButtonOnAction() throws Exception {
+        if(usernameTextField.getText().equals("Admin")&&passwordPasswordField.getText().equals("admin")){
+            PageController pageController=new PageController();
+            pageController.changePage(adminButton);
+        }
+    }
+
+    @FXML
+    public void signUpButtonOnAction(ActionEvent event) throws Exception {
+        PageController pageController=new PageController();
+        pageController.changePage(signUpButton);
+    }
+    public void changeLoginButtonOnAction() throws Exception {
+        PageController pageController=new PageController();
+        pageController.changePage(loginChangeButton);
+    }
     File file = new File("");
     String path = file.getCanonicalPath();
 

@@ -1,0 +1,3 @@
+magixx;1,1,Resident Advisor,Excellent/2,2,Club President,Good/3,3,Peer Tutor,Good/4,4,Event Coordinator,Fair
+poker;1,1,President,Bad/2,2,Ping-Pong King,Good/3,3,Poker King,Excellent/4,4,GPT King,Fair
+crazylilkao;1,1,President,Bad/2,2,Baller,Good/3,3,Coder,Excellent/4,4,CSDN king,Good

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student.AdminstratorController">
+   <children>
+      <Pane layoutX="14.0" layoutY="129.0" prefHeight="265.0" prefWidth="299.0" style="-fx-border-color: Grey;">
+         <children>
+            <TextField fx:id="UsernameTextfield" layoutX="44.0" layoutY="35.0" prefHeight="27.0" prefWidth="184.0" promptText="username" />
+            <TextField fx:id="CourseSemesterfield" layoutX="44.0" layoutY="116.0" prefHeight="27.0" prefWidth="184.0" promptText="semester" />
+            <TextField fx:id="CourseNumTextfield" layoutX="44.0" layoutY="62.0" prefHeight="27.0" prefWidth="184.0" promptText="NO." />
+            <TextField fx:id="CourseTextfield" layoutX="44.0" layoutY="89.0" prefHeight="27.0" prefWidth="184.0" promptText="course" />
+            <TextField fx:id="CourseGradefield" layoutX="44.0" layoutY="143.0" prefHeight="27.0" prefWidth="184.0" promptText="grade" />
+            <TextField fx:id="CourseCreditTextfield" layoutX="44.0" layoutY="170.0" prefHeight="27.0" prefWidth="184.0" promptText="Credits" />
+            <Button fx:id="okButton1" layoutX="102.0" layoutY="228.0" mnemonicParsing="false" onAction="#OnGradeChangeButtonClicked" text="Save info" />
+         </children></Pane>
+      <Pane layoutX="331.0" layoutY="129.0" prefHeight="265.0" prefWidth="299.0" style="-fx-border-color: Grey;">
+         <children>
+            <Button fx:id="okButton2" layoutX="261.0" layoutY="29.0" mnemonicParsing="false" onAction="#OnContributionchangebuttonClicked" text="ok" />
+            <TextField fx:id="UsernameTextfield1" layoutX="34.0" layoutY="53.0" prefHeight="27.0" prefWidth="184.0" promptText="username" />
+            <Label layoutX="23.0" layoutY="14.0" prefHeight="24.0" prefWidth="253.0" text="Type in contributions" textFill="#8a5252">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Year3ContributionRateTextfield" layoutX="12.0" layoutY="228.0" prefHeight="23.0" prefWidth="113.0" promptText="Ratings" />
+            <TextField fx:id="Year3ContributionTextfield" layoutX="12.0" layoutY="205.0" prefHeight="23.0" prefWidth="113.0" promptText="Positions" />
+            <Label layoutX="15.0" layoutY="186.0" prefHeight="19.0" prefWidth="61.0" text="Third Year" textFill="#0a0a0a">
+               <font>
+                  <Font name="Calibri Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Year4ContributionRateTextfield" layoutX="170.0" layoutY="228.0" prefHeight="23.0" prefWidth="113.0" promptText="Ratings" />
+            <TextField fx:id="Year4ContributionTextfield" layoutX="170.0" layoutY="205.0" prefHeight="23.0" prefWidth="113.0" promptText="Positions" />
+            <Label layoutX="170.0" layoutY="186.0" prefHeight="19.0" prefWidth="71.0" text="Fourth Year" textFill="#0a0a0a">
+               <font>
+                  <Font name="Calibri Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Year1ContributionRateTextfield" layoutX="13.0" layoutY="144.0" prefHeight="23.0" prefWidth="113.0" promptText="Ratings" />
+            <TextField fx:id="Year1ContributionTextfield" layoutX="13.0" layoutY="121.0" prefHeight="23.0" prefWidth="113.0" promptText="Positions" />
+            <Label layoutX="18.0" layoutY="93.0" prefHeight="19.0" prefWidth="61.0" text="First Year" textFill="#0a0a0a">
+               <font>
+                  <Font name="Calibri Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Year2ContributionRateTextfield" layoutX="169.0" layoutY="144.0" prefHeight="23.0" prefWidth="113.0" promptText="Ratings" />
+            <TextField fx:id="Year2ContributionTextfield" layoutX="169.0" layoutY="121.0" prefHeight="23.0" prefWidth="113.0" promptText="Positions" />
+            <Label layoutX="170.0" layoutY="93.0" prefHeight="19.0" prefWidth="71.0" text="Second Year" textFill="#0a0a0a">
+               <font>
+                  <Font name="Calibri Italic" size="14.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Label prefHeight="59.0" prefWidth="640.0" style="-fx-background-color: ccccff;" text="               Administrator" textFill="#8c6868">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="adminExit" layoutX="605.0" layoutY="39.0" onMouseClicked="#homeExitOnMouseClicked" text="Exit" textFill="#758e3a">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="31.0" prefHeight="38.0" prefWidth="305.0" text="Academic Affairs Management System" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="132.0" prefHeight="24.0" prefWidth="253.0" text="Type in/Change grades" textFill="#8a5252">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="69.0" text="Administrator enters information" />
+      <Label layoutX="15.0" layoutY="84.0" prefHeight="38.0" prefWidth="389.0" text="Tip: Please enter all  information for the same student at once!" />
+   </children>
+</Pane>

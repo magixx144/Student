@@ -1,3 +1,5 @@
 magixx,true,true,false,false,true,false
 poker,false,false,true,true,false,true
 crazylilkao,true,true,true,true,false,true
+jakkson,false,false,true,ture,ture,true
+niko,false,false,false,false,false,false
